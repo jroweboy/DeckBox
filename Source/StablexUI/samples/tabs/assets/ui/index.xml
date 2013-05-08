@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<VBox w="800" h="600" childPadding="20">
+
+    <!-- Structure for TabStack
+        <TabStack>
+            <TabPage />
+            <TabPage />
+            <TabPage />
+            <TabPage />
+        </TabStack>
+    -->
+
+    <TabStack name="'tabs'" padding="10" widthPt="100" h="225" wrap="true" tabBar-paddingLeft="20" tabBar-childPadding="5">
+
+        <TabPage
+            skinName      = "'tabPane'"
+            title-padding = "5"
+            title-text    = "'First tab'"
+            title-highlightFormat-color = "0xFF0000"
+            title-highlightFormat-bold  = "true"
+            title-highlightOnSelect     = "true"
+            title-states-up-skinName    = "'tabUp'"
+            title-states-down-skinName  = "'tabDown'"
+        >
+            <HBox widthPt="100" heightPt="100" childPadding="20">
+                <Button skin:Paint-color="0x00AA00" skin:Paint-corners="[10]" text="'Show previous tab'" on-click="$this.getParentAs('tabs', $TabStack).previousTab();"/>
+                <Text text="'Hello world!'"/>
+                <Button skin:Paint-color="0x00AA00" skin:Paint-corners="[10]" text="'Show next tab'" on-click="$this.getParentAs('tabs', $TabStack).nextTab();"/>
+            </HBox>
+        </TabPage>
+
+        <TabPage
+            name          = "'second'"
+            skinName      = "'tabPane'"
+            title-padding = "5"
+            title-text    = "'Second tab'"
+            title-highlightFormat-color = "0xFF0000"
+            title-highlightFormat-bold  = "true"
+            title-highlightOnSelect     = "true"
+            title-states-up-skinName    = "'tabUp'"
+            title-states-down-skinName  = "'tabDown'"
+        >
+            <HBox widthPt="100" heightPt="100" childPadding="20">
+                <Button skin:Paint-color="0x00AA00" skin:Paint-corners="[10]" text="'Show previous tab'" on-click="$this.getParentAs('tabs', $TabStack).previousTab();"/>
+                <Text text="'The answer is 42'"/>
+                <Button skin:Paint-color="0x00AA00" skin:Paint-corners="[10]" text="'Show next tab'" on-click="$this.getParentAs('tabs', $TabStack).nextTab();"/>
+            </HBox>
+        </TabPage>
+
+        <TabPage
+            skinName      = "'tabPane'"
+            title-padding = "5"
+            title-text    = "'Third tab'"
+            title-highlightFormat-color = "0xFF0000"
+            title-highlightFormat-bold  = "true"
+            title-highlightOnSelect     = "true"
+            title-states-up-skinName    = "'tabUp'"
+            title-states-down-skinName  = "'tabDown'"
+        >
+            <HBox widthPt="100" heightPt="100" childPadding="20">
+                <Button skin:Paint-color="0x00AA00" skin:Paint-corners="[10]" text="'Show previous tab'" on-click="$this.getParentAs('tabs', $TabStack).previousTab();"/>
+                <Text text="'Nevermind'"/>
+                <Button skin:Paint-color="0x00AA00" skin:Paint-corners="[10]" text="'Show next tab'" on-click="$this.getParentAs('tabs', $TabStack).nextTab();"/>
+            </HBox>
+        </TabPage>
+
+    </TabStack>
+
+    <!-- show tab by name example -->
+    <Button skin:Paint-color="0xAAAAAA" skin:Paint-corners="[20]" padding="10" text="'Show tab with `.name` == \'second\''" on-click="$this.wparent.getChildAs('tabs', $TabStack).showByName('second');"/>
+
+    <TabStack name="'tabs'" padding="10" widthPt="100" h="225" wrap="true" tabBar-paddingLeft="20" tabBar-childPadding="5" on-create="
+        $this.setChildIndex($this.tabBar, $this.numChildren - 1);
+        $this.refresh();
+    ">
+
+        <TabPage
+            skinName      = "'tabPane'"
+            title-padding = "5"
+            title-text    = "'First tab'"
+            title-highlightFormat-color = "0xFF0000"
+            title-highlightFormat-bold  = "true"
+            title-highlightOnSelect     = "true"
+            title-states-up-skinName    = "'bottomUp'"
+            title-states-down-skinName  = "'bottomDown'"
+        >
+            <HBox widthPt="100" heightPt="100" childPadding="20">
+                <Button skin:Paint-color="0x00AA00" skin:Paint-corners="[10]" text="'Show previous tab'" on-click="$this.getParentAs('tabs', $TabStack).previousTab();"/>
+                <Text text="'Hello world!'"/>
+                <Button skin:Paint-color="0x00AA00" skin:Paint-corners="[10]" text="'Show next tab'" on-click="$this.getParentAs('tabs', $TabStack).nextTab();"/>
+            </HBox>
+        </TabPage>
+
+        <TabPage
+            skinName      = "'tabPane'"
+            title-padding = "5"
+            title-text    = "'Second tab'"
+            title-highlightFormat-color = "0xFF0000"
+            title-highlightFormat-bold  = "true"
+            title-highlightOnSelect     = "true"
+            title-states-up-skinName    = "'bottomUp'"
+            title-states-down-skinName  = "'bottomDown'"
+        >
+            <HBox widthPt="100" heightPt="100" childPadding="20">
+                <Button skin:Paint-color="0x00AA00" skin:Paint-corners="[10]" text="'Show previous tab'" on-click="$this.getParentAs('tabs', $TabStack).previousTab();"/>
+                <Text text="'The answer is 42'"/>
+                <Button skin:Paint-color="0x00AA00" skin:Paint-corners="[10]" text="'Show next tab'" on-click="$this.getParentAs('tabs', $TabStack).nextTab();"/>
+            </HBox>
+        </TabPage>
+
+        <TabPage
+            skinName      = "'tabPane'"
+            title-padding = "5"
+            title-text    = "'Third tab'"
+            title-highlightFormat-color = "0xFF0000"
+            title-highlightFormat-bold  = "true"
+            title-highlightOnSelect     = "true"
+            title-states-up-skinName    = "'bottomUp'"
+            title-states-down-skinName  = "'bottomDown'"
+        >
+            <HBox widthPt="100" heightPt="100" childPadding="20">
+                <Button skin:Paint-color="0x00AA00" skin:Paint-corners="[10]" text="'Show previous tab'" on-click="$this.getParentAs('tabs', $TabStack).previousTab();"/>
+                <Text text="'Nevermind'"/>
+                <Button skin:Paint-color="0x00AA00" skin:Paint-corners="[10]" text="'Show next tab'" on-click="$this.getParentAs('tabs', $TabStack).nextTab();"/>
+            </HBox>
+        </TabPage>
+
+    </TabStack>
+
+</VBox>

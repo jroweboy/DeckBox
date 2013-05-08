@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Box id="'root'" w="800" h="600" childPadding="20">
+    <!-- drop-down -->
+    <Options
+        w = "100"
+        h = "30"
+
+        options = "[['lion', 1], ['camel', 2], ['elephant', 3]]"
+
+        box-skin:Paint-alpha = "0.9"
+
+        optionDefaults = "'option'"
+    />
+
+    <!-- fullscreen list -->
+    <HBox childPadding="10">
+        <Text text="'Full screen list:'" />
+        <Options
+            w = "150"
+            h = "30"
+
+            options = "[['apple', 'wow'], ['pancakes', 'yay'], ['peanut butter jelly time!', 'doh']]"
+
+            list-skin:Paint-color = "0x000000"
+            list-skin:Paint-alpha = "0.7"
+            list-widthPt="100"
+            list-heightPt="100"
+
+            alignList="false"
+
+            optionDefaults = "'option'"
+        />
+    </HBox>
+
+</Box>
+
