@@ -5,9 +5,12 @@ import nme.Lib;
 /**
  * @author Joshua Granick
  */
-class Main {
+class Main extends Widget{
+
 	public static function main () {
-		Lib.current.addChild (new Card("Caius", "caius"));
+        UIBuilder.regClass('Card');
+        UIBuilder.init();
+        Lib.current.addChild( UIBuilder.buildFn('main.xml')() );
 	}
 	
 }

@@ -17,7 +17,7 @@ import nme.Assets;
  * 
  * @author James Rowe
  */
-class Card extends Sprite {
+class Card extends Widget {
 	private var image:Bitmap;
 	private var name:String;
 	private var head:Card;
